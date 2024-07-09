@@ -65,10 +65,28 @@ chat='true'>
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" Onclick identify()>
 
-            
+ 
         </form>
     </div>
+
+    <script>
+        function identify()
+        {
+        var new_contact = {
+	"First name": document.getElementById("name").value, //Replace with first name of the user
+	"Last name": "Doe", //Replace with last name of the user
+	"Email": document.getElementById("email").value, //Replace with email of the user
+	"Alternate contact number": "98765432", //Replace with a custom field
+	"company": {
+		"Name": "Example.com", //Replace with company name
+		"Website": "www.example.com" //Replace with website of company
+    }    
+};
+var identifier = "email";
+fwcrm.identify(identifier, new_contact);
+        }
+    </script>
 </body>
 </html>
